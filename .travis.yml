@@ -7,7 +7,7 @@ script:
  - RAILS_ENV=test bundle exec rake db:migrate --trace
  - bundle exec rake db:test:prepare
  - bundle install
- - rails db:migrate RAILS_ENV=test
+ - bundle exec rake db:migrate RAILS_ENV=test
 deploy:
   provider: pages
   skip-cleanup: true
