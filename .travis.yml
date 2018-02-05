@@ -4,10 +4,9 @@ rvm:
 env:
   - DB=SQLite
 script:
+ - bundle install
  - RAILS_ENV=test bundle exec rake db:migrate --trace
  - bundle exec rake db:test:prepare
- - bundle install
- - bundle exec rake db:migrate RAILS_ENV=test
 deploy:
   provider: pages
   skip-cleanup: true
